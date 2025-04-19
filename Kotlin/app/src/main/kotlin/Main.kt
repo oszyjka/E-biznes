@@ -86,6 +86,7 @@ fun runServerBot(token: String) {
 }
 
 class BotListener : ListenerAdapter() {
+    private val categories = listOf("Food", "Sport equipment", "Clothes", "Furniture")
     override fun onMessageReceived(event: MessageReceivedEvent) {
         val author = event.author
         val message = event.message
@@ -93,5 +94,11 @@ class BotListener : ListenerAdapter() {
         if (author.isBot) return
         val displayMessage = message.contentDisplay
         println("Received message from ${author.name}: $displayMessage")
+
+        val content = message.contentRaw.trim()
+        if (content.equals("!categories", ignoreCase = true)) {
+            val response = "Available categories:\n" + categories.joinToString("\n") { "- $it" }
+            message.reply(response).queue()
+        }
     }
 }
