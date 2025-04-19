@@ -12,3 +12,17 @@ Zadanie 1 Docker
 ✅ 5.0 wymaganie 5 [dodać konfigurację docker-compose](https://github.com/oszyjka/E-biznes/commit/e4baa87c854900069794345a255d65a7072c9e41)
 
 Kod: [Docker](https://github.com/oszyjka/E-biznes/tree/main/Docker)
+
+Zadanie 3 Kotlin
+
+✅ 3.0 wymaganie 1 [Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord](https://github.com/oszyjka/E-biznes/commit/7dd9e851a1ae9dddbebfecbabba6397e417c5373)
+
+✅ 3.5 wymaganie 2 [Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)](https://github.com/oszyjka/E-biznes/commit/edd1e99a34dd8f841e4b38fcd4308cbedbe30dd9)
+
+✅ 4.0 wymaganie 3 [Zwróci listę kategorii na określone żądanie użytkownika](https://github.com/oszyjka/E-biznes/commit/c0f8021b9bb094891b31b0d5da1439e28f50fce4)
+
+✅ 4.5 wymaganie 4 [Zwróci listę produktów wg żądanej kategorii](https://github.com/oszyjka/E-biznes/commit/cc9cc560323988b3c43f3b3e0abc4a1188f5f05d)
+
+❌ 5.0 wymaganie 5 
+
+Kod: [Kotlin](https://github.com/oszyjka/E-biznes/tree/main/Kotlin/app)
