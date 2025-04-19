@@ -1,2 +1,9 @@
 # Assets
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: String)
+
+# Products
+GET     /products               controllers.ProductsController.getAllProducts
+GET     /products/:id           controllers.ProductsController.getProductById(id: Long)
+POST    /products               controllers.ProductsController.addProduct
+PUT     /products/:id           controllers.ProductsController.updateProduct(id: Long)
+DELETE  /products/:id           controllers.ProductsController.deleteProduct(id: Long)
