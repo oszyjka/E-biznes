@@ -87,6 +87,13 @@ fun runServerBot(token: String) {
 
 class BotListener : ListenerAdapter() {
     private val categories = listOf("Food", "Sport equipment", "Clothes", "Furniture")
+    private val productsByCategory = mapOf(
+        "Food" to listOf("Pasta", "Ice creame", "Milk"),
+        "Sport equipment" to listOf("Racket", "Skis", "Helmet"),
+        "Clothes" to listOf("Dress", "Jeans", "Coat"),
+        "Furniture" to listOf("Desk", "Table", "Chair")
+    )
+
     override fun onMessageReceived(event: MessageReceivedEvent) {
         val author = event.author
         val message = event.message
@@ -99,6 +106,27 @@ class BotListener : ListenerAdapter() {
         if (content.equals("!categories", ignoreCase = true)) {
             val response = "Available categories:\n" + categories.joinToString("\n") { "- $it" }
             message.reply(response).queue()
+        }
+
+        if (content.startsWith("!products", ignoreCase = true)) {
+            val parts = content.split(" ", limit = 3)
+            if (parts.size < 2) {
+                message.reply("Please provide a category. Example: `!products Clothes`").queue()
+                return
+            }
+
+            var category = parts[1].trim()
+            if (category == "Sport") {
+                category = "Sport equipment"
+            }
+            val products = productsByCategory[category]
+
+            if (products != null) {
+                val response = "Products in **$category**:\n" + products.joinToString("\n") { "- $it" }
+                message.reply(response).queue()
+            } else {
+                message.reply("Unknown category: `$category`.").queue()
+            }
         }
     }
 }
