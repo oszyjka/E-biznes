@@ -21,6 +21,8 @@ dependencies {
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
     implementation(kotlin("stdlib"))
     implementation("org.slf4j:slf4j-simple:2.0.12")
+
+    implementation("net.dv8tion:JDA:5.0.0-beta.13")
 }
 
 java {

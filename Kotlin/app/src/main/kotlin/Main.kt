@@ -12,27 +12,44 @@ import kotlinx.serialization.json.Json
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.delay
 
+import net.dv8tion.jda.api.JDABuilder
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent
+import net.dv8tion.jda.api.hooks.ListenerAdapter
+import javax.security.auth.login.LoginException
+import net.dv8tion.jda.api.requests.GatewayIntent
+
 @Serializable
 data class WebhookMessage(val content: String)
 
 fun main() = runBlocking {
     val dotenv = dotenv()
-    val webhookURL = dotenv["WEBHOOK_URL"] 
-    println("Now you can enter your message to send to server.Typing 'exit' will quit the app.")
-    println("Enter message:")
+    val mode = dotenv["APP_MODE"] ?: "bot"
 
-    while (true) {
-        val inputMessage = readLine() 
+    if (mode == "webhook") {
+        runBlocking {
+            val webhookURL = dotenv["WEBHOOK_URL"] 
+            println("Now you can enter your message to send to server.Typing 'exit' will quit the app.")
+            println("Enter message:")
 
-        if (inputMessage.isNullOrBlank()) {
-            delay(100) 
-            continue
+            while (true) {
+                val inputMessage = readLine() 
+
+                if (inputMessage.isNullOrBlank()) {
+                    delay(100) 
+                    continue
+                }
+
+                if (inputMessage.equals("exit", ignoreCase = true)) break
+
+                sendMessageToServer(webhookURL, inputMessage)
+            }
         }
-
-        if (inputMessage.equals("exit", ignoreCase = true)) break
-
-        sendMessageToServer(webhookURL, inputMessage)
+    } else if (mode == "bot") {
+        val token = dotenv["BOT_TOKEN"]
+        runServerBot(token)
     }
+
+    
 }
 
 suspend fun sendMessageToServer(webhookURL: String,inputMessage: String) {
@@ -52,4 +69,29 @@ suspend fun sendMessageToServer(webhookURL: String,inputMessage: String) {
     }
 
     client.close()
+}
+
+fun runServerBot(token: String) {
+    try {
+        val jda = JDABuilder.createDefault(token)
+            .enableIntents(
+                GatewayIntent.GUILD_MESSAGES,
+                GatewayIntent.MESSAGE_CONTENT
+            )
+            .addEventListeners(BotListener())
+            .build()
+    } catch (e: LoginException) {
+        println("Failed to login: ${e.message}")
+    }
+}
+
+class BotListener : ListenerAdapter() {
+    override fun onMessageReceived(event: MessageReceivedEvent) {
+        val author = event.author
+        val message = event.message
+
+        if (author.isBot) return
+        val displayMessage = message.contentDisplay
+        println("Received message from ${author.name}: $displayMessage")
+    }
 }
