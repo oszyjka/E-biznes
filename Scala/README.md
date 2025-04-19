@@ -1,8 +1,8 @@
-Run app: sbt run
+Run app: **sbt run**
 
 Examples endpoints (bash):
 Products:
-1. Show all: curl http://localhost:9000/products     
+1. Show all: ```curl http://localhost:9000/products```     
 2. Show by id: curl http://localhost:9000/products/1      
 3. Update: curl -X PUT -H "Content-Type: application/json" -d '{"id":1,"name":"Dress","category":"Clothes","price":200}' http://localhost:9000/products/1
 4. Delete: curl -X DELETE http://localhost:9000/products/1
