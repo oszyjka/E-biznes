@@ -13,6 +13,20 @@ Zadanie 1 Docker
 
 Kod: [Docker](https://github.com/oszyjka/E-biznes/tree/main/Docker)
 
+Zadanie 2 Scala
+
+✅ 3.0 wymaganie 1 [Należy stworzyć kontroler do Produktów](https://github.com/oszyjka/E-biznes/commit/056ef3eec25017890d705a0248760835a8b2f5be)
+
+✅ 3.5 wymaganie 2 [Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane pobierane z listy](https://github.com/oszyjka/E-biznes/commit/d779290b2018f9d1e19b4d883a222166b67285b8)
+
+✅ 4.0 wymaganie 3 [Należy stworzyć kontrolery do Kategorii oraz Koszyka + endpointy zgodnie z CRUD](https://github.com/oszyjka/E-biznes/commit/60cf8d7365b8277cb303156513992df49d7574d9)
+
+❌ 4.5 wymaganie 4 
+
+❌ 5.0 wymaganie 5 
+
+Kod: [Scala](https://github.com/oszyjka/E-biznes/tree/main/Scala)
+
 Zadanie 3 Kotlin
 
 ✅ 3.0 wymaganie 1 [Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord](https://github.com/oszyjka/E-biznes/commit/7dd9e851a1ae9dddbebfecbabba6397e417c5373)
