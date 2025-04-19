@@ -7,3 +7,17 @@ GET     /products/:id           controllers.ProductsController.getProductById(id
 POST    /products               controllers.ProductsController.addProduct
 PUT     /products/:id           controllers.ProductsController.updateProduct(id: Long)
 DELETE  /products/:id           controllers.ProductsController.deleteProduct(id: Long)
+
+# Categories
+GET     /categories              controllers.CategoryController.getAllCategories
+GET     /categories/:id          controllers.CategoryController.getCategoryById(id: Int)
+POST    /categories              controllers.CategoryController.createCategory
+PUT     /categories/:id          controllers.CategoryController.updateCategory(id: Int)
+DELETE  /categories/:id          controllers.CategoryController.deleteCategory(id: Int)
+
+# Cart
+GET     /cart                   controllers.CartController.getAllItems
+GET     /cart/:productId        controllers.CartController.getItemById(productId: Int)
+POST    /cart                   controllers.CartController.addItem
+PUT     /cart/:productId        controllers.CartController.updateItem(productId: Int)
+DELETE  /cart/:productId        controllers.CartController.deleteItem(productId: Int)
