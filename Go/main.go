@@ -25,5 +25,9 @@ func main() {
 	e.GET("/carts/:id", controllers.GetCart)
 	e.POST("/carts", controllers.CreateCart)
 
+	e.GET("/categories", controllers.GetCategories)
+	e.GET("/categories/:id", controllers.GetCategory)
+	e.POST("/categories", controllers.CreateCategory)
+
 	e.Logger.Fatal(e.Start(":8080"))
 }
