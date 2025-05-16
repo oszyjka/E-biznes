@@ -5,19 +5,17 @@ import (
 	"strconv"
 
 	"github.com/labstack/echo/v4"
+
+	"go-project/database"
+	"go-project/models"
 )
 
-type Product struct {
-	id       int    `json:"id"`
-	Name     string `json:"name"`
-	Price    int    `json:"price"`
-	Category string `json:"category"`
-}
-
-var products []Product
-var idx = 1
-
 func GetProducts(c echo.Context) error {
+	var products []models.Product
+	result := database.DB.Find(&products)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, result.Error)
+	}
 	return c.JSON(http.StatusOK, products)
 }
 
@@ -26,23 +24,23 @@ func GetProduct(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid id"})
 	}
-
-	for _, product := range products {
-		if product.id == idCheck {
-			return c.JSON(http.StatusOK, product)
-		}
+	var product models.Product
+	result := database.DB.First(&product, idCheck)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, "Product not found")
 	}
-	return c.JSON(http.StatusNotFound, "Product not found")
+	return c.JSON(http.StatusOK, product)
 }
 
 func CreateProduct(c echo.Context) error {
-	product := new(Product)
-	if err := c.Bind(&product); err != nil {
+	product := new(models.Product)
+	if err := c.Bind(product); err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid input"})
 	}
-	product.id = idx
-	idx++
-	products = append(products, *product)
+	result := database.DB.Create(product)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, result.Error)
+	}
 	return c.JSON(http.StatusCreated, product)
 }
 
@@ -51,19 +49,12 @@ func UpdateProduct(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid id"})
 	}
-	updated := new(Product)
-	if err := c.Bind(updated); err != nil {
-		return err
+	var product models.Product
+	result := database.DB.First(&product, idCheck)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, "Product not found")
 	}
-
-	for i, product := range products {
-		if product.id == idCheck {
-			products[i].Name = updated.Name
-			products[i].Price = updated.Price
-			products[i].Category = updated.Category
-			return c.JSON(http.StatusOK, products[i])
-		}
-	}
+	database.DB.Save(&product)
 	return c.JSON(http.StatusNotFound, "Product not found")
 }
 
@@ -73,11 +64,9 @@ func DeleteProduct(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid id"})
 	}
 
-	for i, product := range products {
-		if product.id == idCheck {
-			products = append(products[:i], products[i+1:]...)
-			return c.NoContent(http.StatusNoContent)
-		}
+	result := database.DB.Delete(&models.Product{}, idCheck)
+	if result.RowsAffected == 0 {
+		return c.JSON(http.StatusNotFound, "Product not found")
 	}
-	return c.JSON(http.StatusNotFound, "Product not found")
+	return c.NoContent(http.StatusNoContent)
 }
