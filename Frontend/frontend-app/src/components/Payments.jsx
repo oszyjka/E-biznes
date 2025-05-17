@@ -11,7 +11,7 @@ function Payments({ cartItems, clearCart }) {
       return;
     }
 
-    axios.post('/payments', {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/payments`, {
       items: cartItems,
       userName,
     })

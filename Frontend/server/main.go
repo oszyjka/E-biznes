@@ -12,6 +12,11 @@ func main() {
 	e := echo.New()
 	database.Connect()
 
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:5173", "http://localhost:3000"},
+		AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE},
+	}))
+
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 

@@ -6,7 +6,7 @@ function Products({ addToCart }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('/products')
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/products`)
       .then((res) => {
         console.log("Products response:", res.data); 
         setProducts(res.data);
