@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Products({ onSelect }) {
+function Products({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ function Products({ onSelect }) {
          {products.map((product) => (
           <li key={product.id}>
             {product.name} - ${product.price}
-            <button onClick={() => onSelect(product)} style={{ marginLeft: '1rem' }}>
+            <button onClick={() => addToCart(product)} style={{ marginLeft: '1rem' }}>
              Buy
           </button>
           </li>
