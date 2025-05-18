@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 
 function Products({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/products`)
+    api.get('/products')
       .then((res) => {
         console.log("Products response:", res.data); 
         setProducts(res.data);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 
 function Payments({ cartItems, clearCart }) {
   const [userName, setUserName] = useState('');
@@ -11,7 +11,7 @@ function Payments({ cartItems, clearCart }) {
       return;
     }
 
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/payments`, {
+    api.post('/payments', {
       items: cartItems,
       userName,
     })
