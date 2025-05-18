@@ -12,9 +12,34 @@ import (
 
 func GetProducts(c echo.Context) error {
 	var products []models.Product
-	result := database.DB.Find(&products)
-	if result.Error != nil {
-		return c.JSON(http.StatusInternalServerError, result.Error)
+	result := database.DB
+
+	if minPrice := c.QueryParam("min_price"); minPrice != "" {
+		if min, err := strconv.Atoi(minPrice); err == nil {
+			result = result.Scopes(models.MinPrice(min))
+		}
+	}
+
+	if maxPrice := c.QueryParam("max_price"); maxPrice != "" {
+		if max, err := strconv.Atoi(maxPrice); err == nil {
+			result = result.Scopes(models.MinPrice(max))
+		}
+	}
+
+	if cat := c.QueryParam("category_id"); cat != "" {
+		if id, err := strconv.Atoi(cat); err == nil {
+			result = result.Scopes(models.SortCategory(uint(id)))
+		}
+	}
+
+	if sort := c.QueryParam("sort"); sort == "asc" {
+		result = result.Scopes(models.SortByPriceAsc())
+	} else if sort == "desc" {
+		result = result.Scopes(models.SortByPriceDesc())
+	}
+
+	if err := result.Find(&products).Error; err != nil {
+		return c.JSON(http.StatusInternalServerError, echo.Map{"error": err.Error()})
 	}
 	return c.JSON(http.StatusOK, products)
 }
