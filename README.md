@@ -40,3 +40,40 @@ Zadanie 3 Kotlin
 ❌ 5.0 wymaganie 5 
 
 Kod: [Kotlin](https://github.com/oszyjka/E-biznes/tree/main/Kotlin/app)
+
+Zadanie 4 Go
+
+✅ 3.0 wymaganie 1 [Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
+miała kontroler Produktów zgodny z CRUD](https://github.com/oszyjka/E-biznes/commit/77b1adc94e119521d7bc64f048c032ecc700b66d)
+
+✅ 3.5 wymaganie 2 [Należy stworzyć model Produktów wykorzystując gorm oraz
+wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast
+listy)](https://github.com/oszyjka/E-biznes/commit/eff981797a391980da2b53c5af2307b428911b41)
+
+✅ 4.0 wymaganie 3 [Należy dodać model Koszyka oraz dodać odpowiedni endpoint](https://github.com/oszyjka/E-biznes/commit/758e9d0eee366c4e487a1a636ae6b687ae911bfd)
+
+✅ 4.5 wymaganie 4 [Należy stworzyć model kategorii i dodać relację między kategorią,
+a produktem](https://github.com/oszyjka/E-biznes/commit/99c414c832cf6f2365e11406cbb2e3f614583dfd)
+
+✅ 5.0 wymaganie 5 [pogrupować zapytania w gorm’owe scope'y](https://github.com/oszyjka/E-biznes/commit/f146c93d03e9db33283886334204317fc60dc218)
+
+Kod: [Go](https://github.com/oszyjka/E-biznes/tree/main/Go)
+
+Zadanie 5 Frontend
+
+✅ 3.0 wymaganie 1 [W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
+Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
+Produktach powinniśmy pobierać dane o produktach z aplikacji
+serwerowej](https://github.com/oszyjka/E-biznes/commit/6941970a50852134b1ec035add74585399a661a7)
+
+✅ 3.5 wymaganie 2 [Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing](https://github.com/oszyjka/E-biznes/commit/19d568ffb2ca30a135ce5bc30daa1d93acb7341d)
+
+✅ 4.0 wymaganie 3 [Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
+pomocą React hooks](https://github.com/oszyjka/E-biznes/commit/19d568ffb2ca30a135ce5bc30daa1d93acb7341d)
+
+✅ 4.5 wymaganie 4 [Należy dodać skrypt uruchamiający aplikację serwerową oraz
+kliencką na dockerze via docker-compose](https://github.com/oszyjka/E-biznes/commit/84803432757cd921df925fe64bc8615724148aef)
+
+✅ 5.0 wymaganie 5 [Należy wykorzystać axios’a oraz dodać nagłówki pod CORS](https://github.com/oszyjka/E-biznes/commit/a9ad43efd6db7cd050c7d8b2e354aa8702b2b58a)
+
+Kod: [Frontend](https://github.com/oszyjka/E-biznes/tree/main/Frontend)
