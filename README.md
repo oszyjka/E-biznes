@@ -77,3 +77,21 @@ kliencką na dockerze via docker-compose](https://github.com/oszyjka/E-biznes/co
 ✅ 5.0 wymaganie 5 [Należy wykorzystać axios’a oraz dodać nagłówki pod CORS](https://github.com/oszyjka/E-biznes/commit/a9ad43efd6db7cd050c7d8b2e354aa8702b2b58a)
 
 Kod: [Frontend](https://github.com/oszyjka/E-biznes/tree/main/Frontend)
+
+Zadanie 6 Testy
+
+✅ 3.0 wymaganie 1 [Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium
+(Kotlin, Python, Java, JS, Go, Scala)](https://github.com/oszyjka/E-biznes/commit/83e0a90308f010877549c1bb609976316794960a)
+
+✅ 3.5 wymaganie 2 [Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50
+asercji](https://github.com/oszyjka/E-biznes/commit/e5be708b935c610509222ff0529f2dbd7bb39332)
+
+✅ 4.0 wymaganie 3 [Należy stworzyć testy jednostkowe do wybranego wcześniejszego
+projektu z minimum 50 asercjami](https://github.com/oszyjka/E-biznes/commit/f77e2389e6962bc06139fbe47f866062c451d235)
+
+✅ 4.5 wymaganie 4 [Należy dodać testy API, należy pokryć wszystkie endpointy z
+minimum jednym scenariuszem negatywnym per endpoint]()
+
+✅ 5.0 wymaganie 5 [Należy uruchomić testy funkcjonalne na Browserstacku]()
+
+Kod: [Testy](https://github.com/oszyjka/E-biznes/tree/main/Testy)
