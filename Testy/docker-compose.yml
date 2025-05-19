@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  server:
+    build: ./server
+    container_name: go-server
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  frontend:
+    build: 
+      context: ./frontend-app
+      args:
+        VITE_BACKEND_URL: http://localhost:8080
+    container_name: react-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

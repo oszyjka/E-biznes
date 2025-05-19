@@ -1,10 +1,8 @@
+/* eslint-disable no-undef */
 import axios from 'axios';
 
-const instance = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+const baseURL = process.env.VITE_BACKEND_URL || 'http://localhost:3000';
 
-export default instance;
+const api = axios.create({ baseURL });
+
+export default api;
