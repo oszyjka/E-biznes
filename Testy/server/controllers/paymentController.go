@@ -17,7 +17,7 @@ func CreatePayment(c echo.Context) error {
 	if err := database.DB.Create(payment).Error; err != nil {
 		return c.JSON(http.StatusInternalServerError, echo.Map{"error": "Failed to save payment"})
 	}
-	return c.JSON(http.StatusOK, echo.Map{
+	return c.JSON(http.StatusCreated, echo.Map{
 		"message": "Payment received",
 		"data":    payment,
 	})

@@ -54,8 +54,15 @@ func UpdateProduct(c echo.Context) error {
 	if result.Error != nil {
 		return c.JSON(http.StatusNotFound, "Product not found")
 	}
+	updatedProduct := new(models.Product)
+	if err := c.Bind(updatedProduct); err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid input"})
+	}
+	product.Name = updatedProduct.Name
+	product.Price = updatedProduct.Price
+	product.CategoryId = updatedProduct.CategoryId
 	database.DB.Save(&product)
-	return c.JSON(http.StatusNotFound, "Product not found")
+	return c.JSON(http.StatusOK, product)
 }
 
 func DeleteProduct(c echo.Context) error {
