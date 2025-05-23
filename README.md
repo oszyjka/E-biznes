@@ -95,3 +95,28 @@ minimum jednym scenariuszem negatywnym per endpoint](https://github.com/oszyjka/
 ❌ 5.0 wymaganie 5 [Należy uruchomić testy funkcjonalne na Browserstacku]()
 
 Kod: [Testy](https://github.com/oszyjka/E-biznes/tree/main/Testy)
+
+Zadanie 7 Sonar
+
+✅ 3.0 wymaganie 1 [Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w
+hookach gita](https://github.com/oszyjka/Sonar-Server-/commit/459fa23ddef28afd13550b0e44352a512f7c9c02)
+
+✅ 3.5 wymaganie 2 [Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod
+aplikacji serwerowej)](https://github.com/oszyjka/Sonar-Server-/commit/0562d5b95cc8b4959bfa406c2c27d48a869621eb)
+
+✅ 4.0 wymaganie 3 [Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod
+aplikacji serwerowej)](https://github.com/oszyjka/Sonar-Server-/commit/0562d5b95cc8b4959bfa406c2c27d48a869621eb)
+
+✅ 4.5 wymaganie 4 [Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa
+w kodzie w Sonarze (kod aplikacji serwerowej)](https://github.com/oszyjka/Sonar-Server-/commit/a2596626ce0fa9d6590e9dd5dd33732173790b9a)
+
+✅ 5.0 wymaganie 5 [Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie
+aplikacji klienckiej](https://github.com/oszyjka/Sonar-Client-/commit/00107c90e79b64732ba4765ce60c36aa2b6b9c58)
+
+Kod: [Sonar-Server](https://github.com/oszyjka/Sonar-Server-) [Sonar-Client](https://github.com/oszyjka/Sonar-Client-)
+
+Server:
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Server-&metric=bugs)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Server-) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Server-&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Server-) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Server-&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Server-) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Server-&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Server-)
+
+Client:
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Client-&metric=bugs)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Client-) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Client-&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Client-) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Client-&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Client-) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=oszyjka_Sonar-Client-&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=oszyjka_Sonar-Client-)
