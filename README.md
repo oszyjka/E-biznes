@@ -92,7 +92,7 @@ projektu z minimum 50 asercjami](https://github.com/oszyjka/E-biznes/commit/f77e
 ✅ 4.5 wymaganie 4 [Należy dodać testy API, należy pokryć wszystkie endpointy z
 minimum jednym scenariuszem negatywnym per endpoint](https://github.com/oszyjka/E-biznes/commit/2c7c25cba243c48217197989b1fb139ed866959c)
 
-❌ 5.0 wymaganie 5 [Należy uruchomić testy funkcjonalne na Browserstacku]()
+✅ 5.0 wymaganie 5 [Należy uruchomić testy funkcjonalne na Browserstacku](https://github.com/oszyjka/E-biznes/commit/6510e3dbce08c212dccf53bbf73d7519074814d7)
 
 Kod: [Testy](https://github.com/oszyjka/E-biznes/tree/main/Testy)
 
