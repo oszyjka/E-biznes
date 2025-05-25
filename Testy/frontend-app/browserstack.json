@@ -1,0 +1,47 @@
+{
+    "auth": {
+        "username": "olga_FESNO7",
+        "access_key": "pJMin5sF6pyDXpXxs1Jr"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "firefox",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "edge",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "cypress.config.cjs",
+        "project_name": "Cypress BrowserStack Tests",
+        "build_name": "Build BrowserStack",
+        "exclude": [],
+        "parallels": "1",
+        "npm_dependencies": {},
+        "package_config_options": {},
+        "headless": true,
+        "local": true
+    },
+    "connection_settings": {
+        "local": true
+    },
+    "disable_usage_reporting": false
+}

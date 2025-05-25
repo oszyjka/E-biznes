@@ -1,0 +1,11 @@
+node_modules/
+cypress/videos/
+cypress/screenshots/
+tests.zip
+*.log
+*.tmp
+.DS_Store
+*.sqlite
+coverage/
+dist/
+build/
